@@ -1,3 +1,4 @@
+// menu.js
 function initMenu() {
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
@@ -8,16 +9,20 @@ function initMenu() {
             menu.classList.toggle("show");
         });
 
-        document.addEventListener("click", () => {
-            menu.classList.remove("show");
+        document.addEventListener("click", (e) => {
+            if (!menu.contains(e.target) && e.target !== menuBtn) {
+                menu.classList.remove("show");
+            }
         });
     }
 }
 
-// Initialize menu after it's inserted in the DOM
+// Insert menu into page
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('menu-container');
-    if(container && container.innerHTML.trim() !== '') {
+    fetch('menu.html')
+    .then(res => res.text())
+    .then(html => {
+        document.getElementById('menu-container').innerHTML = html;
         initMenu();
-    }
+    });
 });

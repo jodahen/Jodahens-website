@@ -5,38 +5,12 @@
     <title>Jodahen.nl</title>
     <link rel="stylesheet" href="style.css">
     <script src="theme.js" defer></script>
+    <script src="menu.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-    <!-- Container for the menu -->
+
     <div id="menu-container"></div>
-
-    <script>
-        // Fetch and insert menu, then attach functionality
-        fetch('menu.html')
-        .then(res => res.text())
-        .then(html => {
-            const container = document.getElementById('menu-container');
-            container.innerHTML = html;
-
-            // Menu exists now — attach event listeners
-            const menuBtn = document.getElementById("menuBtn");
-            const menu = document.getElementById("menu");
-
-            if(menuBtn && menu){
-                menuBtn.addEventListener("click", (event) => {
-                    event.stopPropagation();
-                    menu.classList.toggle("show");
-                });
-
-                document.addEventListener("click", (e) => {
-                    if (!menu.contains(e.target) && e.target !== menuBtn) {
-                        menu.classList.remove("show");
-                    }
-                });
-            }
-        });
-    </script>
 
     <h1>Welcome to my website!</h1>
 

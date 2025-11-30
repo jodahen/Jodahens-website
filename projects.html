@@ -14,51 +14,9 @@
     </nav>
 
 
-    <script>
-        function toggleTheme() {
-            let current = localStorage.getItem("theme");
-
-            if (current === "light") {
-                localStorage.setItem("theme", "dark");
-                document.body.style.background = '#0f172a'
-                document.body.style.color = 'white'
-            } else {
-                localStorage.setItem("theme", "light");
-                document.body.style.background = 'white'
-                document.body.style.color = 'black'
-            }
-        }
-    </script>
-
-    <!-- Container for the menu -->
     <div id="menu-container"></div>
-
-    <script>
-        // Fetch and insert menu, then attach functionality
-        fetch('menu.html')
-        .then(res => res.text())
-        .then(html => {
-            const container = document.getElementById('menu-container');
-            container.innerHTML = html;
-
-            // Menu exists now — attach event listeners
-            const menuBtn = document.getElementById("menuBtn");
-            const menu = document.getElementById("menu");
-
-            if(menuBtn && menu){
-                menuBtn.addEventListener("click", (event) => {
-                    event.stopPropagation();
-                    menu.classList.toggle("show");
-                });
-
-                document.addEventListener("click", (e) => {
-                    if (!menu.contains(e.target) && e.target !== menuBtn) {
-                        menu.classList.remove("show");
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="theme.js" defer></script>
+    <script src="menu.js" defer></script>
 
 
     <h1>Projects</h1>
