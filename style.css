@@ -100,6 +100,18 @@ nav a { margin:0 10px; }
     opacity: 1;
 }
 
+.menu-content a.darkblue-btn {
+    background: #3a608b;
+    color: white;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.menu-content a.darkblue-btn:hover {
+    background:#0c6f9a;
+    color: black;
+}
+
 .menu-content a.gray-btn {
     background: #555;
     color: white;

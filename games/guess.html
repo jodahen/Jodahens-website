@@ -8,6 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
+    <nav>
+        <a href="index.html">Back to Games</a>
+        <a href="../index.html">Home</a>
+    </nav>
+
+    <!-- Container for the menu -->
+    <div id="menu-container"></div>
+
+    <script>
+        // Fetch and insert menu, then attach functionality
+        fetch('menu.html')
+        .then(res => res.text())
+        .then(html => {
+            const container = document.getElementById('menu-container');
+            container.innerHTML = html;
+
+            // Menu exists now — attach event listeners
+            const menuBtn = document.getElementById("menuBtn");
+            const menu = document.getElementById("menu");
+
+            if(menuBtn && menu){
+                menuBtn.addEventListener("click", (event) => {
+                    event.stopPropagation();
+                    menu.classList.toggle("show");
+                });
+
+                document.addEventListener("click", (e) => {
+                    if (!menu.contains(e.target) && e.target !== menuBtn) {
+                        menu.classList.remove("show");
+                    }
+                });
+            }
+        });
+    </script>
+
     <h1>🎯 Guess the Number (1–10)</h1>
 
     <input id="guess" type="number" min="1" max="10">
