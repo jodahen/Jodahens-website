@@ -13,10 +13,24 @@
 
     <div class="settings">
         <button onclick="toggleTheme()">🌙 Dark / Light Mode</button>
+
+        <label for="font-size">Font Size:</label>
+        <select id="font-size" onchange="changeFontSize(this.value)">
+            <option value="16">Default</option>
+            <option value="18">Large</option>
+            <option value="20">Extra Large</option>
+        </select>
+
+        <label for="color-scheme">Color Scheme:</label>
+        <select id="color-scheme" onchange="changeColorScheme(this.value)">
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
     </div>
 
+    <script src="settings.js"></script>
+
     <div id="menu-container"></div>
-    <script src="theme.js" defer></script>
     <script src="menu.js" defer></script>
 
 </body>
