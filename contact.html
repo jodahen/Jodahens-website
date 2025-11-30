@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jodahen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function toggleTheme() {
+            let current = localStorage.getItem("theme");
+
+            if (current === "light") {
+                localStorage.setItem("theme", "dark");
+                document.body.style.background = '#0f172a'
+                document.body.style.color = 'white'
+            } else {
+                localStorage.setItem("theme", "light");
+                document.body.style.background = 'white'
+                document.body.style.color = 'black'
+            }
+        }
+    </script>
+
+    <h1>Contact</h1>
+    <p>Email: your@email.com</p>
+    <p>Youtube: https://www.youtube.com/@jodahen</p>
+    <p>Phone Number: 06-.........</p>
+
+</body>
+</html>

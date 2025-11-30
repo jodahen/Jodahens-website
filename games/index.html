@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function toggleTheme() {
+            let current = localStorage.getItem("theme");
+
+            if (current === "light") {
+                localStorage.setItem("theme", "dark");
+                document.body.style.background = '#0f172a'
+                document.body.style.color = 'white'
+            } else {
+                localStorage.setItem("theme", "light");
+                document.body.style.background = 'white'
+                document.body.style.color = 'black'
+            }
+        }
+    </script>
+    
+    <h1>Games Hub</h1>
+    <a href="guess.html">Guess the Number</a>
+
+    <br>
+    <a href="../index.html" style="background:#38bdf8;">Home</a>
+</body>
+</html>

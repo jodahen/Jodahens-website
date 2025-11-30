@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Jodahen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu-container"></div>
+
+    <script>
+        // Load menu dynamically
+        fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menu-container').innerHTML = data;
+            // Init menu after insertion
+            if(typeof initMenu === 'function') initMenu();
+        });
+    </script>
+
+
+    <h1>Projects</h1>
+    <p>Here I'll show my games, pictures, videos and more!</p>
+</body>
+</html>
