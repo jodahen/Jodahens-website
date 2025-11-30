@@ -134,6 +134,20 @@ nav a { margin:0 10px; }
     color: white;
 }
 
+.settings {
+    max-width: 300px;
+    margin: 40px auto;
+}
+
+.menu-content {
+    animation: fadeIn 0.18s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px);}
+    to   { opacity: 1; transform: translateY(0);}
+}
+
 
 /* Mobile readability */
 @media (max-width: 600px) {
