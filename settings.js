@@ -1,61 +1,42 @@
-// ===== SETTINGS.JS =====
-
-// Apply saved theme on page load
+// Apply saved theme and sync checkbox
 function applyTheme() {
     const theme = localStorage.getItem("theme") || "dark";
+    const checkbox = document.getElementById("dark-mode-toggle");
+
     if(theme === "light") {
         document.body.style.background = "white";
         document.body.style.color = "black";
+        if(checkbox) checkbox.checked = false;
     } else {
         document.body.style.background = "#0f172a";
         document.body.style.color = "white";
+        if(checkbox) checkbox.checked = true;
     }
 }
 
-// Toggle dark/light theme
+// Toggle dark/light theme via checkbox
 function toggleTheme() {
-    const current = localStorage.getItem("theme") || "dark";
-    if(current === "light") {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+    const checkbox = document.getElementById("dark-mode-toggle");
+    localStorage.setItem("theme", checkbox.checked ? "dark" : "light");
     applyTheme();
 }
 
-// Apply saved font size
-function applyFontSize() {
-    const size = localStorage.getItem("fontSize");
-    if(size) document.body.style.fontSize = size + "px";
-}
-
-// Change font size
+// Font size
 function changeFontSize(size) {
     document.body.style.fontSize = size + "px";
     localStorage.setItem("fontSize", size);
 }
 
-// Apply saved color scheme
-function applyColorScheme() {
-    const scheme = localStorage.getItem("colorScheme");
-    if(scheme === "blue") {
-        document.body.style.setProperty('--primary-color', '#38bdf8');
-    } else if(scheme === "green") {
-        document.body.style.setProperty('--primary-color', '#22c55e');
-    } else {
-        document.body.style.setProperty('--primary-color', '#38bdf8'); // default
-    }
-}
-
-// Change color scheme
+// Color scheme placeholder
 function changeColorScheme(scheme) {
     localStorage.setItem("colorScheme", scheme);
-    applyColorScheme();
+    alert("Color scheme set to " + scheme);
 }
 
-// Initialize all settings on page load
-document.addEventListener("DOMContentLoaded", () => {
+// On page load, apply saved settings
+document.addEventListener('DOMContentLoaded', () => {
     applyTheme();
-    applyFontSize();
-    applyColorScheme();
+
+    const savedSize = localStorage.getItem("fontSize");
+    if(savedSize) document.body.style.fontSize = savedSize + "px";
 });
