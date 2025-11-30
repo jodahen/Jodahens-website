@@ -111,3 +111,52 @@ nav a { margin:0 10px; }
     background:#a9c0ca;
     color: black;
 }
+
+.home-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 20px;
+}
+
+.game-card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 14px;
+    color: white;
+}
+
+
+/* Mobile readability */
+@media (max-width: 600px) {
+    body {
+        font-size: 18px;        
+    }
+
+    h1 {
+        font-size: 28px;        
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    a {
+        font-size: 16px;
+    }
+}
