@@ -78,14 +78,17 @@ nav a { margin:0 10px; }
 }
 
 .menu-content a {
-    display:block;
-    padding:10px 16px;
+    display: flex;           /* align items in a row */
+    align-items: center;     /* vertically center icon and text */
+    gap: 6px;                /* space between icon and text */
+    padding: 10px 16px;
     text-decoration: none;
-    color:white;
+    color: white;
     transition: background 0.3s;
     border-radius: 8px;
     margin: 4px;
 }
+
 
 .menu-content a:hover {
     background:var(--primary-color);
