@@ -89,7 +89,6 @@ nav a { margin:0 10px; }
     margin: 4px;
 }
 
-
 .menu-content a:hover {
     background:var(--primary-color);
     color: black;
