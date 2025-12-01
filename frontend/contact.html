@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact - Jodahen</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/menu.js" defer></script>
-    <script src="js/settings.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="menu.js" defer></script>
+    <script src="settings.js" defer></script>
+    <!-- Fallback dark theme & default font size until JS loads -->
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
    <nav>
@@ -45,6 +54,7 @@
 
     </div>
 
+    <!-- Container for the menu -->
     <div id="menu-container"></div>
 
     <script>
