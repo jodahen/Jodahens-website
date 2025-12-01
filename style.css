@@ -216,6 +216,17 @@ nav a { margin:0 10px; }
     background: #0c6f9a;
 }
 
+:root {
+    --accent:#38bdf8;
+}
+
+a, button {
+    background: var(--accent);
+}
+
+.reduce-motion * {
+    transition:none !important;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px);}

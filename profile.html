@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Jodahen</title>
+</head>
+<body>
+    <h1>👤 Player Profile</h1>
+
+    <div id="profile"></div>
+
+    <script src="stats.js"></script>
+    <script>
+    const div = document.getElementById("profile");
+
+    div.innerHTML = `
+    <h3>Best Guess Game Score: ${getBest("guess")}</h3>
+    <p>Games Played: ${localStorage.getItem("guess_plays")||0}</p>
+    `;
+    </script>
+
+</body>
+</html>

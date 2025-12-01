@@ -10,7 +10,7 @@ function initMenu() {
         });
 
         document.addEventListener("click", (e) => {
-            if (!menu.contains(e.target) && e.target !== menuBtn) {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
                 menu.classList.remove("show");
             }
         });

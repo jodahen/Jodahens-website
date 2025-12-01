@@ -1,42 +1,117 @@
-// Apply saved theme and sync checkbox
-function applyTheme() {
-    const theme = localStorage.getItem("theme") || "dark";
-    const checkbox = document.getElementById("dark-mode-toggle");
+// settings.js
+// Global site settings manager
 
-    if(theme === "light") {
+const defaultSettings = {
+    theme: "dark",
+    fontSize: "16",
+    color: "blue",
+    motion: "on",
+    sound: "on"
+};
+
+/* ===========================
+   Storage helpers
+=========================== */
+
+function saveSetting(key, value) {
+    localStorage.setItem(key, value);
+}
+
+function loadSetting(key) {
+    return localStorage.getItem(key) || defaultSettings[key];
+}
+
+/* ===========================
+   Apply ALL settings
+=========================== */
+
+function applySettings() {
+
+    // ---- THEME ----
+    if (loadSetting("theme") === "light") {
         document.body.style.background = "white";
         document.body.style.color = "black";
-        if(checkbox) checkbox.checked = false;
     } else {
         document.body.style.background = "#0f172a";
         document.body.style.color = "white";
-        if(checkbox) checkbox.checked = true;
+    }
+
+    // ---- FONT SIZE ----
+    document.body.style.fontSize = loadSetting("fontSize") + "px";
+
+    // ---- COLOR SCHEME ----
+    const color = loadSetting("color");
+
+    let accent = "#38bdf8"; // default blue
+    if (color === "green") accent = "#22c55e";
+
+    document.documentElement.style.setProperty("--accent", accent);
+
+    // ---- MOTION ----
+    if (loadSetting("motion") === "off") {
+        document.body.classList.add("reduce-motion");
+    } else {
+        document.body.classList.remove("reduce-motion");
     }
 }
 
-// Toggle dark/light theme via checkbox
-function toggleTheme() {
-    const checkbox = document.getElementById("dark-mode-toggle");
-    localStorage.setItem("theme", checkbox.checked ? "dark" : "light");
-    applyTheme();
+/* ===========================
+   CONTROLS
+=========================== */
+
+// Dark Mode Toggle
+function toggleDarkMode() {
+    const current = loadSetting("theme");
+    saveSetting("theme", current === "light" ? "dark" : "light");
+    applySettings();
 }
 
-// Font size
+// Font size selector
 function changeFontSize(size) {
-    document.body.style.fontSize = size + "px";
-    localStorage.setItem("fontSize", size);
+    saveSetting("fontSize", size);
+    applySettings();
 }
 
-// Color scheme placeholder
-function changeColorScheme(scheme) {
-    localStorage.setItem("colorScheme", scheme);
-    alert("Color scheme set to " + scheme);
+// Color scheme selector
+function changeColorScheme(color) {
+    saveSetting("color", color);
+    applySettings();
 }
 
-// On page load, apply saved settings
-document.addEventListener('DOMContentLoaded', () => {
-    applyTheme();
+// Motion toggle
+function toggleMotion(enabled) {
+    saveSetting("motion", enabled ? "on" : "off");
+    applySettings();
+}
 
-    const savedSize = localStorage.getItem("fontSize");
-    if(savedSize) document.body.style.fontSize = savedSize + "px";
+// Sound toggle (for future games)
+function toggleSound(enabled) {
+    saveSetting("sound", enabled ? "on" : "off");
+}
+
+/* ===========================
+   ON PAGE LOAD
+=========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    applySettings();
+
+    // Sync dark mode checkbox (if it exists on the page)
+    const darkToggle = document.getElementById("darkToggle");
+    if (darkToggle) {
+        darkToggle.checked = loadSetting("theme") === "dark";
+    }
+
+    // Sync font-size dropdown
+    const fontSizeSelect = document.getElementById("font-size");
+    if (fontSizeSelect) {
+        fontSizeSelect.value = loadSetting("fontSize");
+    }
+
+    // Sync color scheme dropdown
+    const colorSelect = document.getElementById("color-scheme");
+    if (colorSelect) {
+        colorSelect.value = loadSetting("color");
+    }
 });
