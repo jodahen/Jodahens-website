@@ -1,0 +1,45 @@
+/* General body and font */
+:root {
+    --primary-color: #38bdf8;
+    --accent: #38bdf8;
+}
+
+body {
+    margin: 0;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding-top: 60px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Headings */
+h1 { color: var(--accent); }
+
+/* Links & buttons */
+a, button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+a:hover, button:hover { background: #0ea5e9; }
+
+/* Reduce motion */
+.reduce-motion * {
+    transition: none !important;
+}
+
+/* Mobile readability */
+@media (max-width: 600px) {
+    body { font-size: 18px; }
+    h1 { font-size: 28px; }
+    a { font-size: 16px; }
+}

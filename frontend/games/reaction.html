@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reaction Timer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="../js/theme.js" defer></script>
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/stats.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Games</a>
+        <a href="../index.html">Home</a>
+    </nav>
+
+    <div id="menu-container"></div>
+    <h1>⚡ Reaction Timer</h1>
+
+    <button id="startBtn">Start</button>
+    <p id="msg">Click the button when it turns green!</p>
+
+    <script>
+    let startTime;
+    const btn = document.getElementById("startBtn");
+    const msg = document.getElementById("msg");
+
+    btn.addEventListener("click", startGame);
+
+    function startGame() {
+        btn.disabled = true;
+        msg.textContent = "Wait for green...";
+        const delay = Math.random() * 2000 + 1000;
+
+        setTimeout(() => {
+            startTime = Date.now();
+            btn.style.background = "green";
+            msg.textContent = "Click now!";
+            btn.disabled = false;
+        }, delay);
+    }
+
+    btn.addEventListener("click", () => {
+        if(startTime){
+            const reaction = (Date.now() - startTime) / 1000;
+            msg.textContent = `⏱ Your reaction time: ${reaction.toFixed(3)}s`;
+            saveScore("reaction", reaction);
+            registerPlay("reaction");
+            btn.style.background = "";
+            startTime = null;
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Node modules
+node_modules/
+
+# SQLite database (contains user info)
+backend/database.sqlite
+
+# Logs, OS files
+*.log
+.DS_Store

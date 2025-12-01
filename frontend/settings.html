@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Jodahen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/settings.js" defer></script>
+    <script src="js/menu.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="games/index.html">Games</a>
+        <a href="about.html">About Me</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="menu-container"></div>
+
+    <h1>⚙ Settings</h1>
+
+    <div class="settings">
+        <label>
+            <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+            🌙 Dark Mode
+        </label>
+
+        <hr>
+
+        <label>
+            Font Size:
+            <select id="font-size" onchange="changeFontSize(this.value)">
+                <option value="16">Default</option>
+                <option value="18">Large</option>
+                <option value="20">Extra Large</option>
+            </select>
+        </label>
+
+        <hr>
+
+        <label>
+            Accent Color:
+            <select id="color-scheme" onchange="changeColorScheme(this.value)">
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </label>
+
+        <hr>
+
+        <label>
+            Reduce Motion:
+            <input type="checkbox" id="motion-toggle" onchange="toggleMotion(this.checked)">
+        </label>
+
+        <hr>
+
+        <label>
+            🔊 Sound Enabled:
+            <input type="checkbox" id="sound-toggle" onchange="toggleSound(this.checked)">
+        </label>
+    </div>
+</body>
+</html>
