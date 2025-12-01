@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings - Jodahen</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="settings.js" defer></script>
     <script src="menu.js" defer></script>
-
 </head>
 <body>
+    <!-- Top navigation -->
     <nav>
         <a href="index.html">Home</a>
         <a href="games/index.html">Games</a>
@@ -18,11 +17,14 @@
         <a href="contact.html">Contact</a>
     </nav>
 
+    <!-- Menu container -->
     <div id="menu-container"></div>
+
     <h1>⚙ Settings</h1>
 
     <div class="settings">
-    <label>
+        <!-- Dark Mode -->
+        <label>
             <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
             🌙 Dark Mode
         </label>
@@ -52,25 +54,19 @@
 
         <hr>
 
-        <!-- Motion Control -->
+        <!-- Motion -->
         <label>
             Reduce Motion:
-            <input type="checkbox" onchange="toggleMotion(!this.checked)">
+            <input type="checkbox" id="motion-toggle" onchange="toggleMotion(this.checked)">
         </label>
 
         <hr>
 
-        <!-- Sound Control -->
+        <!-- Sound -->
         <label>
             🔊 Sound Enabled:
-            <input type="checkbox" checked onchange="toggleSound(this.checked)">
+            <input type="checkbox" id="sound-toggle" onchange="toggleSound(this.checked)">
         </label>
-
     </div>
-
-
-<script src="settings.js"></script>
-<div id="menu-container"></div>
-
 </body>
 </html>

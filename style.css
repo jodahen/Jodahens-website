@@ -75,6 +75,7 @@ nav a { margin:0 10px; }
     position: absolute;
     top: 50px;
     right: 0;
+    display: none !important;
 }
 
 .menu-content a {
@@ -97,6 +98,8 @@ nav a { margin:0 10px; }
 .menu-content.show {
     opacity: 1;
     transform: translateY(0);
+    display: block !important;
+
 }
 
 .menu-content a.darkblue-btn {
@@ -227,6 +230,20 @@ a, button {
 .reduce-motion * {
     transition:none !important;
 }
+
+/* Normal text links (like email, socials) */
+.text-link {
+    background: none !important;
+    padding: 0;
+    margin: 0;
+    color: #38bdf8;
+    font-weight: normal;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px);}

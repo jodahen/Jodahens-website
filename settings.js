@@ -2,11 +2,11 @@
 // Global site settings manager
 
 const defaultSettings = {
-    theme: "dark",
-    fontSize: "16",
-    color: "blue",
-    motion: "on",
-    sound: "on"
+    theme: "dark",      // "dark" or "light"
+    fontSize: "16",     // in px
+    color: "blue",      // "blue" or "green"
+    motion: "on",       // "on" or "off"
+    sound: "on"         // "on" or "off"
 };
 
 /* ===========================
@@ -26,25 +26,32 @@ function loadSetting(key) {
 =========================== */
 
 function applySettings() {
-
     // ---- THEME ----
+    const darkToggle = document.getElementById("darkToggle");
     if (loadSetting("theme") === "light") {
         document.body.style.background = "white";
         document.body.style.color = "black";
+        if(darkToggle) darkToggle.checked = false;
+        if(darkToggle) darkToggle.nextSibling.textContent = " 🌙 Dark Mode";
     } else {
         document.body.style.background = "#0f172a";
         document.body.style.color = "white";
+        if(darkToggle) darkToggle.checked = true;
+        if(darkToggle) darkToggle.nextSibling.textContent = " ☀ Light Mode";
     }
 
     // ---- FONT SIZE ----
     document.body.style.fontSize = loadSetting("fontSize") + "px";
+    const fontSizeSelect = document.getElementById("font-size");
+    if(fontSizeSelect) fontSizeSelect.value = loadSetting("fontSize");
 
     // ---- COLOR SCHEME ----
     const color = loadSetting("color");
+    const colorSelect = document.getElementById("color-scheme");
+    if(colorSelect) colorSelect.value = color;
 
     let accent = "#38bdf8"; // default blue
-    if (color === "green") accent = "#22c55e";
-
+    if(color === "green") accent = "#22c55e";
     document.documentElement.style.setProperty("--accent", accent);
 
     // ---- MOTION ----
@@ -53,6 +60,13 @@ function applySettings() {
     } else {
         document.body.classList.remove("reduce-motion");
     }
+
+    const motionToggle = document.getElementById("motion-toggle");
+    if(motionToggle) motionToggle.checked = loadSetting("motion") === "on";
+
+    // ---- SOUND ----
+    const soundToggle = document.getElementById("sound-toggle");
+    if(soundToggle) soundToggle.checked = loadSetting("sound") === "on";
 }
 
 /* ===========================
@@ -84,9 +98,10 @@ function toggleMotion(enabled) {
     applySettings();
 }
 
-// Sound toggle (for future games)
+// Sound toggle
 function toggleSound(enabled) {
     saveSetting("sound", enabled ? "on" : "off");
+    applySettings();
 }
 
 /* ===========================
@@ -94,24 +109,5 @@ function toggleSound(enabled) {
 =========================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-
     applySettings();
-
-    // Sync dark mode checkbox (if it exists on the page)
-    const darkToggle = document.getElementById("darkToggle");
-    if (darkToggle) {
-        darkToggle.checked = loadSetting("theme") === "dark";
-    }
-
-    // Sync font-size dropdown
-    const fontSizeSelect = document.getElementById("font-size");
-    if (fontSizeSelect) {
-        fontSizeSelect.value = loadSetting("fontSize");
-    }
-
-    // Sync color scheme dropdown
-    const colorSelect = document.getElementById("color-scheme");
-    if (colorSelect) {
-        colorSelect.value = loadSetting("color");
-    }
 });
