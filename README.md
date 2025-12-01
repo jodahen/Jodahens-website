@@ -1,6 +1,6 @@
-# Jodahen.nl – Personal Website & Games Hub
+# Jodahen`s website
 
-This repository contains the source code for my personal website **Jodahen.nl**, fully designed, written, and maintained by me.
+This repository contains the source code for my personal website, fully designed, written, and maintained by me (Jodahen).
 
 The goal of this project is to build a **central creative hub** featuring:
 - Games I create
