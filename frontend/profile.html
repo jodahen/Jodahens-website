@@ -4,35 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - Jodahen</title>
-    <link rel="stylesheet" href="style/style.css">
-    <script src="js/stats.js" defer></script>
-    <script src="js/menu.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Default dark theme and font -->
+    <style>
+        body { background:#0f172a; color:white; font-size:16px; }
+        :root { --accent:#38bdf8; }
+    </style>
+
+    <script src="menu.js" defer></script>
+    <script src="settings.js" defer></script>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="games/index.html">Games</a>
+        <a href="about.html">About Me</a>
+        <a href="contact.html">Contact</a>
+        <a href="projects.html">Projects</a>
+    </nav>
 
     <div id="menu-container"></div>
 
-    <h1>👤 Player Profile</h1>
+    <h1>👤 Your Profile</h1>
 
-    <div class="profile-container" id="profile">
-        <!-- Stats will be injected here -->
+    <div class="profile-container">
+
+        <div class="profile-info">
+            <strong>Username:</strong> <span id="username">Guest</span><br>
+            <strong>Email:</strong> <span id="email">guest@example.com</span><br>
+            <strong>Member since:</strong> <span id="member-since">N/A</span>
+        </div>
+
+        <div class="profile-actions">
+            <button onclick="editProfile()">✏ Edit Profile</button>
+            <button onclick="logout()">🚪 Logout</button>
+        </div>
+
     </div>
 
     <script>
-        // Wait until DOM is loaded
-        document.addEventListener("DOMContentLoaded", () => {
-            const div = document.getElementById("profile");
+        // Simulated profile data
+        const userData = {
+            username: "Jodahen",
+            email: "jodahen@example.com",
+            memberSince: "2025-01-12"
+        };
 
-            div.innerHTML = `
-                <h3>🎯 Best Guess Game Score: ${getBest("guess")}</h3>
-                <p>Games Played: ${localStorage.getItem("guess_plays") || 0}</p>
-                <h3>⚡ Best Reaction Timer Score: ${getBest("reaction")}</h3>
-                <p>Games Played: ${localStorage.getItem("reaction_plays") || 0}</p>
-                <h3>🖱 Click Counter High Score: ${getBest("clicker")}</h3>
-                <p>Games Played: ${localStorage.getItem("clicker_plays") || 0}</p>
-            `;
-        });
+        // Load data
+        document.getElementById("username").textContent = userData.username;
+        document.getElementById("email").textContent = userData.email;
+        document.getElementById("member-since").textContent = userData.memberSince;
+
+        function editProfile() {
+            alert("Edit Profile is not implemented yet 😄");
+        }
+
+        function logout() {
+            alert("Logged out successfully! (Simulation)");
+            window.location.href = "index.html";
+        }
     </script>
-
 </body>
 </html>

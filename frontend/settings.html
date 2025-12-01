@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings - Jodahen</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/settings.js" defer></script>
-    <script src="js/menu.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Default dark theme and font -->
+    <style>
+        body { background:#0f172a; color:white; font-size:16px; }
+        :root { --accent:#38bdf8; }
+    </style>
+
+    <script src="settings.js" defer></script>
+    <script src="menu.js" defer></script>
 </head>
 <body>
     <nav>
@@ -21,6 +28,7 @@
     <h1>⚙ Settings</h1>
 
     <div class="settings">
+        <!-- Dark Mode -->
         <label>
             <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
             🌙 Dark Mode
@@ -28,6 +36,7 @@
 
         <hr>
 
+        <!-- Font Size -->
         <label>
             Font Size:
             <select id="font-size" onchange="changeFontSize(this.value)">
@@ -39,6 +48,7 @@
 
         <hr>
 
+        <!-- Color Scheme -->
         <label>
             Accent Color:
             <select id="color-scheme" onchange="changeColorScheme(this.value)">
@@ -49,6 +59,7 @@
 
         <hr>
 
+        <!-- Motion -->
         <label>
             Reduce Motion:
             <input type="checkbox" id="motion-toggle" onchange="toggleMotion(this.checked)">
@@ -56,6 +67,7 @@
 
         <hr>
 
+        <!-- Sound -->
         <label>
             🔊 Sound Enabled:
             <input type="checkbox" id="sound-toggle" onchange="toggleSound(this.checked)">
