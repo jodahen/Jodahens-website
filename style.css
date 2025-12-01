@@ -68,14 +68,13 @@ nav a { margin:0 10px; }
 }
 
 .menu-content {
-    display: block; 
+    display: none;
     opacity: 0;
     transform: translateY(-15px);
     transition: opacity 0.25s ease, transform 0.25s ease;
     position: absolute;
     top: 50px;
     right: 0;
-    display: none !important;
 }
 
 .menu-content a {
@@ -96,10 +95,9 @@ nav a { margin:0 10px; }
 }
 
 .menu-content.show {
+    display: block !important;
     opacity: 1;
     transform: translateY(0);
-    display: block !important;
-
 }
 
 .menu-content a.darkblue-btn {

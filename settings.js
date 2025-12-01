@@ -27,17 +27,16 @@ function loadSetting(key) {
 
 function applySettings() {
     // ---- THEME ----
-    const darkToggle = document.getElementById("darkToggle");
     if (loadSetting("theme") === "light") {
         document.body.style.background = "white";
         document.body.style.color = "black";
+        const darkToggle = document.getElementById("darkToggle");
         if(darkToggle) darkToggle.checked = false;
-        if(darkToggle) darkToggle.nextSibling.textContent = " 🌙 Dark Mode";
     } else {
         document.body.style.background = "#0f172a";
         document.body.style.color = "white";
+        const darkToggle = document.getElementById("darkToggle");
         if(darkToggle) darkToggle.checked = true;
-        if(darkToggle) darkToggle.nextSibling.textContent = " ☀ Light Mode";
     }
 
     // ---- FONT SIZE ----
@@ -53,6 +52,13 @@ function applySettings() {
     let accent = "#38bdf8"; // default blue
     if(color === "green") accent = "#22c55e";
     document.documentElement.style.setProperty("--accent", accent);
+
+    // in applySettings() in settings.js
+    const emailLink = document.querySelector(".contact-item a.text-link");
+    if(emailLink) {
+        emailLink.style.color = loadSetting("theme") === "light" ? "black" : "#38bdf8";
+    }
+
 
     // ---- MOTION ----
     if (loadSetting("motion") === "off") {
