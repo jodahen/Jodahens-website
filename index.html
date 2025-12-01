@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0;url=frontend/index.html">
-  <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <title>Jodahen.nl</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Default dark theme and font -->
+    <style>
+        body { background:#0f172a; color:white; font-size:16px; }
+        :root { --accent:#38bdf8; }
+    </style>
+
+    <script src="theme.js" defer></script>
+    <script src="menu.js" defer></script>
+    <script src="settings.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-  <p>Redirecting to website...</p>
+
+    <div id="menu-container"></div>
+
+    <h1>Welcome to my website!</h1>
+
+    <div class="home-cards">
+        <a href="projects.html">🚀 Projects</a>
+        <a href="games/index.html">🎮 Games</a>
+        <a href="about.html">ℹ About Me</a>
+        <a href="contact.html">✉ Contact Me</a>
+    </div>
+
 </body>
 </html>
