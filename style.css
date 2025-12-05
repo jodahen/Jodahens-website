@@ -11,7 +11,11 @@ h1 {
 }
 
 #p2 {
-    color: blue;
+    color: rgb(90, 76, 132);
+}
+
+#p3 {
+    color: #59ff5f;
 }
 
 .odd {
