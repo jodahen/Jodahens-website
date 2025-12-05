@@ -1,0 +1,156 @@
+# Jodahen.nl – HTML Tutorial Website
+
+This project is a **single-page tutorial website** built to practice and demonstrate the core features of **HTML, basic CSS, and simple JavaScript**. It acts as a “playground page” where many different elements are shown on one screen so you can see how they work together.
+
+The goal is not to create a finished website, but a **learning reference** — a place to experiment with HTML tags, styling, media, tables, forms, and simple scripting.
+
+---
+
+## What This Project Teaches
+
+This page demonstrates almost all beginner HTML concepts in one place:
+
+### Headings & Text
+- `h1` to `h6`
+- Paragraphs (`p`)
+- Pre-formatted text (`pre`)
+- Text formatting:
+  - `bold`, `italic`, `underline`
+  - `sub` / `sup`
+  - `small` / `big`
+  - `mark`, `del`, `tt`
+
+---
+
+### Styling
+
+Three types of CSS are used:
+
+1. **Inline CSS**  
+   Styling directly inside tags using `style=""`.
+
+2. **Internal CSS**  
+   Styles written inside a `<style>` block in the `<head>`.
+
+3. **External CSS**  
+   Styling loaded from `style.css`.
+
+This shows how each method works and how they combine.
+
+---
+
+### Links & Media
+
+- External links that open in a new tab.
+- Images:
+  - Regular embedded images.
+  - Images that also work as clickable links.
+- Audio playback using `<audio>`.
+- Video playback using `<video>`.
+
+---
+
+### Layout Practice
+
+The page uses modern semantic layout tags:
+
+- `<header>` – Navigation and title area.
+- `<main>` – Main content section.
+- `<footer>` – Credits and contact info.
+
+---
+
+### Lists
+
+Examples of all list types:
+
+- Unordered lists (`ul`)
+- Nested lists
+- Ordered lists (`ol`)
+- Description lists (`dl`)
+
+---
+
+### Tables
+
+A basic table demonstrates:
+
+- Table rows (`tr`)
+- Headers (`th`)
+- Table cells (`td`)
+- Alignment and color styling
+
+---
+
+### Forms
+
+Almost every common form input is shown:
+
+- Text input (username)
+- Password
+- Email
+- Phone numbers with pattern validation
+- Date picker
+- Number input
+- Radio buttons
+- Dropdown menu (`select`)
+- Checkbox
+- Text area
+- File upload
+- Reset and submit buttons
+
+Each input includes proper labels and basic restrictions such as required fields or minimum lengths.
+
+---
+
+### JavaScript Interaction
+
+A small JavaScript function shows how to:
+
+- Select HTML elements by ID.
+- Change content dynamically when a button is clicked.
+
+Example behavior:
+
+- Clicking the button changes the text of a paragraph from `"Hello"` to `"Goodby"`.
+
+---
+
+## Running the Website
+
+There is no setup or installation required.
+
+### To run locally:
+
+1. Download or clone the repository.
+2. Open `index.html` in your browser.
+
+---
+
+## Purpose of This Project
+
+This website exists mainly as:
+
+- A **learning sandbox** for HTML beginners.
+- A reference page for syntax and element usage.
+- A practice environment to test CSS and JavaScript.
+- A foundation for adding future lessons or mini-projects.
+
+---
+
+## Copyright & Assets
+
+Unless stated otherwise, all images, audio files, videos, logos, and other media assets included in this repository are:
+
+**© Jodahen.nl — All Rights Reserved**
+
+These assets are provided solely for educational demonstration within this project and may **not be redistributed, reused, or republished** without explicit permission from the creator.
+
+The HTML, CSS, and JavaScript source code may be freely viewed, studied, and modified for learning purposes.
+
+---
+
+## Created By
+
+**Jodahen.nl**  
+A personal practice project for learning front-end web development.
