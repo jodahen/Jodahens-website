@@ -79,7 +79,7 @@
         <source src="audios/Fluffing-a-Duck.mp3" type="audio/mpeg">
     </audio>
     <h4>goldn-uk-drill-music</h4>
-    <audio src="audios/goldn-uk-drill-music.mp3" controls autoplay loop ></audio>
+    <audio src="audios/goldn-uk-drill-music.mp3" controls autoplay loop muted ></audio>
 
     <!--videos-->
     <hr>
@@ -132,5 +132,130 @@
         <dt>werewolf</dt>
         <dd>Human that transform into a wolf by full moon</dd>
     </dl>
+
+    <hr>
+
+    <!--Tables-->
+    <h3>Store Hours</h3>
+    <table border="1" style="background-color: black;">
+        <tr align="center" style="background-color: aqua;">
+            <th width="100">Sunday</th>
+            <th width="100">Monday</th>
+            <th width="100">Tuesday</th>
+            <th width="100">Wednesday</th>
+            <th width="100">Thursday</th>
+            <th width="100">Friday</th>
+            <th width="100">Saturday</th>
+        </tr>
+
+        <tr align="center" style="background-color: white;">
+            <td>Closed</td>
+            <td>9-5</td>
+            <td>9-5</td>
+            <td>9-5</td>
+            <td>9-5</td>
+            <td>9-5</td>
+            <td>10-2</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!--Button-->
+    <button onclick="doSomething()" style="font-size: 25px; background-color: grey; color: lightblue; border-radius: 10px;">Click me!</button>
+
+    <p id="greeting">Hello</p>
+
+    <script>
+        function doSomething() {
+            document.getElementById("greeting").innerHTML = "Goodby"
+        }
+    </script>
+
+    <hr>
+
+    <!--Forms-->
+    <form action="index.php" method="post" enctype="multipart/form-data">
+
+        <!--Username-->
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" minlength="4" maxlength="15" required><br>
+
+        <!--Password-->
+        <label for="password">Password:</label>
+        <input type="password" id="password" minlength="4" maxlength="15" required><br>
+
+        <!--Email-->
+        <label for="email">email:</label>
+        <input type="email" id="email" placeholder="your@email.com"><br>
+
+        <!--Phone Number-->
+        <label for="phone">phone #:</label>
+        <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+
+        <!--Date-->
+        <label for="bday">Birthday</label>
+        <input type="date" id="bday"><br>
+
+        <!--Bumber-->
+        <label for="quantity">quantity</label>
+        <input type="number" id="quantity" min="0" max="99" value="1"><br>
+
+        <!--Radio-->
+        <label for="title">title:</label>
+
+        <label for="Mr.">Mr.</label>
+        <input type="radio" id="Mr." name="title">
+        <label for="Ms.">Ms.</label>
+        <input type="radio" id="Ms." name="title">
+        <label for="PhD">PhD.</label>
+        <input type="radio" id="PhD." name="title"><br>
+
+        <!--List-->
+        <label for="payment">Payment</label>
+        <select id="payment">
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="giftcard">Giftcard</option>
+        </select><br>
+
+        <!--Checkbox-->
+        <label for="subscribe">Subscribe</label>
+        <input type="checkbox" id="subscribe"><br>
+
+        <!--Text-->
+        <label for="comment">Comment:</label>
+        <textarea id="comment" rows="3" cols="25"></textarea><br>
+
+        <!--File-->
+        <label for="file">File:</label>
+        <input type="file" id="file" accept="image/png, image/jpg"><br>
+
+        <input type="reset"><br>
+        <input type="submit">
+
+        <hr>
+
+        <!--Header-->
+        <header style="background-color: aqua;">
+            <h1>Welcome to Jodahen.nl</h1>
+            <a href="page2.html">Page 2</a>
+            <a href="index.html">Home</a>
+            <a href="#">Contact</a>
+        </header>
+
+        <main>
+            <h4>Check out these cool moves:</h4>
+            <img src="images/Jodahen.png" alt="Profile pic" width="250">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quos facere officiis cupiditate rerum praesentium dicta neque nobis tempora. Doloremque eius temporibus consectetur dolorum ducimus iste quod quia labore? Distinctio!</p>
+        </main>
+
+        <!--Footer-->
+        <footer style="background-color: aqua;">
+            author: Bro code
+            &copy; copoyright reserved<br>
+            <small><a href="mialto:your@email.com">your@email.com</a></small>
+        </footer>
+    </form>
 </body>
 </html>
