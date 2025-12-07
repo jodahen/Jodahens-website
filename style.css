@@ -3,18 +3,24 @@ body {
 }
 
 h1 {
+    font-family: verdana, arial;
     color: white;
 }
 
 #p1 {
+    font-family: "lucida console", "courier new";
+    font-size: 18px;
     color: red;
 }
 
 #p2 {
+    font-style: italic;
+    font-size: 1em;
     color: rgb(90, 76, 132);
 }
 
 #p3 {
+    font-size: 2em;
     color: #59ff5f;
 }
 
