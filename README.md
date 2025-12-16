@@ -11,6 +11,7 @@ The goal is to demonstrate interactive browser-based games in a **portfolio-frie
 ### Games
 
 * **Wordle** (5 & 6 letter versions, random words optional)
+* **Reaction Test** (F1 styled reaction test)
 * Mini-games demonstrating JavaScript logic and UI interaction
 * Interactive game settings
 
