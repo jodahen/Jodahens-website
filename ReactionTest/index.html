@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Tester - Jodahen</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="viewport" href="">
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li class="nav-item active" data-tab="gameTab">Game</li>
+            <li class="nav-item" data-tab="timesTab" id="showTimesBtn">Times</li>
+        </ul>
+    </nav>
+
+    <div id="f1Lights">
+        <div class="light" id="light1"></div>
+        <div class="light" id="light2"></div>
+        <div class="light" id="light3"></div>
+        <div class="light" id="light4"></div>
+        <div class="light" id="light5"></div>
+    </div>
+
+    <div id="messageBox"></div>
+
+    <div id="timesPopup">
+        <div id="timesContent">
+            <button id="closeTimes">×</button>
+            <h3>All Reaction Times</h3>
+            <pre id="timesList">No times yet.</pre>
+        </div>
+    </div>
+
+   <div id="reactionTest">
+        <h2>F1 Reaction Game</h2>
+        <p>Press Start, wait for the lights to go off, then click!</p>
+
+        <!-- Start Button -->
+        <button id="startButton">Start</button>
+
+        <!-- Best Time Display -->
+        <pre id="bestTimeDisplay">Best Time: -- ms</pre>
+
+        <!-- Times Tab -->
+        <div class="tabContent" id="timesTab" style="display:none;">
+            <pre id="allTimes">All reaction times will appear here.</pre>
+        </div>
+    </div>
+
+    <script src="reaction.js"></script>
+</body>
+</html>

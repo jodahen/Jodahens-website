@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle - Jodahen</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="viewport" href="">
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li class="nav-item active" data-tab="gameTab">Wordle</li>
+            <li class="nav-item" data-tab="settingsTab" id="showSettingsBtn">Settings</li>
+        </ul>
+    </nav>
+
+    <div id="messageBox"></div>
+
+    <div id="settingsPopup">
+        <div id="settingsContent">
+            <button id="closeSettings">×</button>
+            <h3>Settings:</h3>
+            <p id="settingsList">
+                <select id="wordLengthSelect">
+                    <option value="5">5 Letters</option>
+                    <option value="6">6 Letters</option>
+                </select>
+                <label>
+                    <input type="checkbox" id="useRandomWords">
+                    Random
+                </label>
+            </p>
+        </div>
+    </div>
+
+    <div id="wordle">
+        <h2>Wordle</h2>
+        <div id="grid"></div>
+        
+        <!-- Submit Button -->
+        <button id="submitBtn">Guess</button>
+
+         <!-- Settings Tab -->
+        <div class="tabContent" id="settingsTab" style="display:none;">
+            <pre id="settings">Settings:</pre>
+        </div>
+    </div>
+
+    <script src="wordle.js"></script>
+</body>
+
+</html>

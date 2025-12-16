@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker - Jodahen</title>
+
+    <link rel="viewport" href="">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Cookie Clicker</h1>
+
+    <div class="game">
+
+        <div class="cookie-area">
+            <button id="cookieBtn" class="cookie">🍪</button>
+            <div id="cookieDisplay">You have 0 cookies</div>
+            <div id="cps"></div>
+            <div id="stats"></div>
+        </div>
+
+        <div id="buySelector">
+            <button onclick="setBuyAmount(1)">1</button>
+            <button onclick="setBuyAmount(10)">10</button>
+            <button onclick="setBuyAmount(100)">100</button>
+        </div>
+        
+        <div class="shop">
+            <div id="clickUpgrades"></div>
+            <div id="buildings"></div>
+            <div id="buildingUpgrades"></div>
+            
+            <button id="prestigeBtn">prestige</button>
+            <div id="prestigeInfo"></div>
+        </div>
+
+    </div>
+
+    <div id="goldenCookie" style="display: none;">⭐</div>
+    <div id="toast"></div>
+
+    <script src="cookie.js"></script>
+</body>
+</html>

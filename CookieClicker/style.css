@@ -1,0 +1,188 @@
+body{
+    background: radial-gradient(circle at top, #705030, #3a2612);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1{
+    margin-top: 20px;
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 40px;
+}
+
+.cookie-area{
+    text-align: center;
+}
+
+.cookie{
+    background: none;
+    border: none;
+    font-size: 120px;
+    cursor: pointer;
+    transition: transform 0.05s ease;
+}
+
+.cookie:active{
+    transform: scale(0.9);
+}
+
+#cookieDisplay{
+    font-size: 26px;
+    margin-top: 10px;
+}
+
+#cps{
+    margin-top: 4px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+#stats{
+    margin-top: 5px;
+    color: #ddd;
+}
+
+.shop{
+    background: rgba(0,0,0,0.35);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.shop button{
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: none;
+    background: #c68642;
+    color: white;
+    cursor: pointer;
+}
+
+.shop button:hover{
+    background: #d8944d;
+}
+
+.shop button:disabled{
+    background: #555;
+    cursor: not-allowed;
+}
+
+#goldenCookie{
+    font-size: 60px;
+    position: fixed;
+    cursor: pointer;
+    user-select: none;
+    animation: pulse 0.6s infinite alternate;
+    filter: drop-shadow(0 0 15px gold);
+}
+
+@keyframes pulse {
+    from{ transform: scale(1);}
+    to{ transform: scale(1.2);}
+}
+
+#toast{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222;
+    color: gold;
+    padding: 14px 18px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn{
+    from{ opacity: o; transform: translateX(40px);}
+    to{ opacity: 1; transform: translateX(0);}
+}
+
+.float-number{
+    position: fixed;
+    color: gold;
+    font-weight: bold;
+    pointer-events: none;
+    animation: floatup 1s forwards ease-out;
+    text-shadow: 0 0 6px black;
+}
+
+@keyframes floatup{
+    from{opacity: 1; transform: translateY(0) scale(1);}
+    to{opacity: 0; transform: translateY(-60px) scale(1.4);}
+}
+
+.shop button{
+    position: relative;
+}
+
+.shop button:hover::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    background: #111;
+    color: gold;
+    padding: 6px 10px;
+    border-radius: 6px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.shop button:hover{
+    transform: scale(1.05);
+}
+
+.shop button:active{
+    transform: scale(0.96);
+}
+
+#skillTree{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skillNode{
+    width: 90px;
+    height: 90px;
+    background: #7c5a2b;
+    color: #f4e1b0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    padding: 4px;
+    border: 2px solid #3e2f22;
+    transition: transform 0.1s ease, background 0.2s ease;
+    position: relative;
+}
+
+.skillNode:hover{
+    transform: scale(1.05);
+    background: #a17542;
+}
+
+.skillNode.disabled{
+    background: #5c452f;
+    cursor: not-allowed;
+    color: #999;
+    border-color: #3e2f22;
+}

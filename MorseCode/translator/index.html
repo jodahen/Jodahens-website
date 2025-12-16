@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Translator - Jodahen</title>
+
+    <link rel="viewport" href="">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li class="nav-item" data-target="generator"><a href="../generator/index.html">Generator</a></li>
+            <li class="nav-item active" data-target="translator">Translator</li>
+        </ul>
+    </nav>
+
+    <div id="morseApp">
+        <h2>Morse Code Translator</h2>
+
+        <textarea id="morseInput" placeholder="Enter Morse code here"></textarea>
+        <div id="charCount">0 / 500</div>
+
+        <button id="translateBtn">Translate</button>
+
+        <div id="outputContainer">
+            <pre id="textOutput"></pre>
+            <button id="copyBtn">Copy</button>
+        </div>
+    </div>
+
+    <script src="translator.js"></script>
+</body>
+</html>

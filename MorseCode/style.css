@@ -1,0 +1,225 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Background */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f3f4f6;
+}
+
+/* Morse App Card */
+#morseApp {
+    width: 80vw;
+    max-width: 900px;
+    background: rgba(30, 41, 59, 0.95);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+/* Title */
+#morseApp h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: #f3f4f6;
+}
+
+/* Subtitle / Description */
+#morseApp p {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* Textarea Input */
+textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 400px;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: #1f2937;
+    color: #f3f4f6;
+    font-size: 16px;
+    line-height: 1.6;
+    resize: none;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 12px #3b82f6;
+}
+
+/* Generate Button */
+button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+    #morseApp {
+        padding: 20px;
+    }
+
+    textarea, pre {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
+}
+
+/* Output container is relative */
+#outputContainer {
+    width: 100%;
+    position: relative;
+}
+
+pre {
+    width: 100%;
+    margin-top: 1.5em;
+    padding: 1em;
+    padding-right: 3em; /* space for copy button */
+    min-height: 5em;
+    border-radius: 12px;
+    background: #111827;
+    border: 1px solid #374151;
+    color: #93c5fd;
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;  /* no scrollbars */
+    max-height: none;  /* allow height to grow with content */
+    transition: height 0.2s ease;
+}
+
+/* Copy button inside output */
+#copyBtn {
+    position: absolute;
+    top: 1em;    /* matches pre padding-top */
+    left: 46%;  /* inside output box relative to padding */
+    padding: 0.4em 0.6em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* hidden initially */
+    transition: color 0.2s ease;
+
+    box-shadow: none;
+}
+
+#copyBtn:hover {
+    color: #3b82f6;
+    text-decoration: underline;
+    border-radius: 4px;
+    transform: translateY(-1px);
+}
+
+#copyBtn:active {
+    transform: translateY(0);
+}
+
+#copyBtn:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Navbar */
+nav {
+    width: 100%;
+    background: rgba(30, 41, 59, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;               /* horizontal layout */
+    justify-content: center;     /* center tabs */
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.nav-item a:hover {
+    color: #3b82f6;
+}
+
+.nav-item.active {
+    color: #ffffff;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #3b82f6;
+    border-radius: 2px;
+}
