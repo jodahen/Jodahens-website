@@ -1,20 +1,112 @@
-body{
-    background: radial-gradient(circle at top, #705030, #3a2612);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
 
-h1{
-    margin-top: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.game{
+/* Page Background */
+body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    gap: 80px;
-    margin-top: 40px;
+    align-items: center;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f3f4f6;
 }
+
+#cookieClicker {
+    width: 80vw;
+    max-width: 900px;
+    background: rgba(30, 41, 59, 0.95);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+/* Title */
+#cookieClicker h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: #f3f4f6;
+}
+
+/* Subtitle / Description */
+#cookieClicker p {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: #f3f4f6;
+}
+
+button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+    #cookieClicker {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .cookie-area{
     text-align: center;
