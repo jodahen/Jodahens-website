@@ -1,5 +1,5 @@
 # Word files
-words/*.txt
+Wordle/words/*.txt
 
 # OS / Editor specific files
 .DS_Store
