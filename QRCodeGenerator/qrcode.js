@@ -10,4 +10,6 @@ function generateQR(text){
 
 generateBtn.addEventListener('click', () => {
     generateQR(qrText.value)
+
+    imgBox.style.display = "flex";
 })
