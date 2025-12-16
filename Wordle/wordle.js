@@ -25,15 +25,15 @@ let isRevealing = false;
 // -----------------------------
 function loadWords() {
     return Promise.all([
-        fetch('words/words5.txt').then(r => r.text()).then(t => words5 = t.split('\n').map(w => w.trim())),
-        fetch('words/words6.txt').then(r => r.text()).then(t => words6 = t.split('\n').map(w => w.trim()))
+        fetch('../assets/words/words5.txt').then(r => r.text()).then(t => words5 = t.split('\n').map(w => w.trim())),
+        fetch('../assets/words/words6.txt').then(r => r.text()).then(t => words6 = t.split('\n').map(w => w.trim()))
     ]);
 }
 
 function loadRandomWords() {
     return Promise.all([
-        fetch('words/randomWords5.txt').then(r => r.text()).then(t => randomWords5 = t.split('\n').map(w => w.trim())),
-        fetch('words/randomWords6.txt').then(r => r.text()).then(t => randomWords6 = t.split('\n').map(w => w.trim()))
+        fetch('../assets/words/randomWords5.txt').then(r => r.text()).then(t => randomWords5 = t.split('\n').map(w => w.trim())),
+        fetch('../assets/words/randomWords6.txt').then(r => r.text()).then(t => randomWords6 = t.split('\n').map(w => w.trim()))
     ]);
 }
 
