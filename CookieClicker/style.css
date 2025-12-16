@@ -1,48 +1,57 @@
+/* ===== Reset & Base ===== */
 html, body {
     height: 100%;
     overflow: hidden;
-}
-
-* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
 }
 
-/* Page Background */
 body {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    flex-direction: column;       /* stack title and game area */
+    justify-content: flex-start;  /* title at top */
+    align-items: center;          /* center horizontally */
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #f3f4f6;
+    padding: 30px 20px;
 }
 
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #f3f4f6;
+    text-align: center;
+}
+
+/* ===== Main Container ===== */
 #cookieClicker {
-    width: 80vw;
-    max-width: 900px;
-    background: rgba(30, 41, 59, 0.95);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;     /* center cookie+shop horizontally */
+    align-items: center;         /* center vertically relative to container */
+    gap: 40px;
+    width: 90vw;
+    max-width: 1200px;
+    background: rgba(30,41,59,0.95);
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 70px;
+    margin-top: 35%;
 }
 
-/* Title */
+/* ===== Titles ===== */
 #cookieClicker h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 8px;
     letter-spacing: 1px;
     color: #f3f4f6;
+    text-align: center;
 }
 
-/* Subtitle / Description */
 #cookieClicker p {
     text-align: center;
     color: #9ca3af;
@@ -50,14 +59,7 @@ body {
     font-size: 0.95rem;
 }
 
-h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-    color: #f3f4f6;
-}
-
+/* ===== Buttons ===== */
 button {
     width: 100%;
     margin-top: 16px;
@@ -83,36 +85,39 @@ button:active {
     box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
 }
 
-/* Responsive for smaller screens */
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+/* Responsive for small screens */
 @media (max-width: 600px) {
     #cookieClicker {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
         padding: 20px;
     }
 
-    button {
-        font-size: 0.95rem;
+    .shop {
+        width: 100%;
+    }
+
+    .cookie-area {
+        align-items: center;       /* center cookie on mobile */
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cookie-area{
-    text-align: center;
+/* ===== Cookie Area ===== */
+.cookie-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;     /* cookie left-aligned inside area */
+    justify-content: center;     /* vertically centered inside area */
 }
 
-.cookie{
+.cookie {
     background: none;
     border: none;
     font-size: 120px;
@@ -120,34 +125,30 @@ button:active {
     transition: transform 0.05s ease;
 }
 
-.cookie:active{
+.cookie:active {
     transform: scale(0.9);
 }
 
-#cookieDisplay{
+#cookieDisplay {
     font-size: 26px;
     margin-top: 10px;
 }
 
-#cps{
-    margin-top: 4px;
-    color: #aaa;
-    font-size: 14px;
-}
-
-#stats{
+#cps, #stats {
     margin-top: 5px;
     color: #ddd;
 }
 
-.shop{
-    background: rgba(0,0,0,0.35);
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
+/* ===== Shop ===== */
+.shop {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.shop button{
+.shop button {
+    position: relative;
     width: 100%;
     margin: 8px 0;
     padding: 10px;
@@ -157,68 +158,19 @@ button:active {
     background: #c68642;
     color: white;
     cursor: pointer;
+    transition: transform 0.1s ease, background 0.2s ease;
 }
 
-.shop button:hover{
+.shop button:hover {
+    transform: scale(1.05);
     background: #d8944d;
 }
 
-.shop button:disabled{
-    background: #555;
-    cursor: not-allowed;
+.shop button:active {
+    transform: scale(0.96);
 }
 
-#goldenCookie{
-    font-size: 60px;
-    position: fixed;
-    cursor: pointer;
-    user-select: none;
-    animation: pulse 0.6s infinite alternate;
-    filter: drop-shadow(0 0 15px gold);
-}
-
-@keyframes pulse {
-    from{ transform: scale(1);}
-    to{ transform: scale(1.2);}
-}
-
-#toast{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #222;
-    color: gold;
-    padding: 14px 18px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #000;
-    display: none;
-    animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn{
-    from{ opacity: o; transform: translateX(40px);}
-    to{ opacity: 1; transform: translateX(0);}
-}
-
-.float-number{
-    position: fixed;
-    color: gold;
-    font-weight: bold;
-    pointer-events: none;
-    animation: floatup 1s forwards ease-out;
-    text-shadow: 0 0 6px black;
-}
-
-@keyframes floatup{
-    from{opacity: 1; transform: translateY(0) scale(1);}
-    to{opacity: 0; transform: translateY(-60px) scale(1.4);}
-}
-
-.shop button{
-    position: relative;
-}
-
-.shop button:hover::after{
+.shop button:hover::after {
     content: attr(data-tooltip);
     position: absolute;
     background: #111;
@@ -232,28 +184,70 @@ button:active {
     pointer-events: none;
 }
 
-.shop button:hover{
-    transform: scale(1.05);
+/* ===== Golden Cookie ===== */
+#goldenCookie {
+    font-size: 60px;
+    position: fixed;
+    cursor: pointer;
+    user-select: none;
+    animation: pulse 0.6s infinite alternate;
+    filter: drop-shadow(0 0 15px gold);
 }
 
-.shop button:active{
-    transform: scale(0.96);
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
 }
 
-#skillTree{
+/* ===== Toast ===== */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.85);
+    color: gold;
+    padding: 14px 18px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Floating Numbers ===== */
+.float-number {
+    position: fixed;
+    color: rgb(0, 255, 183);
+    font-weight: bold;
+    pointer-events: none;
+    animation: floatup 1s forwards ease-out;
+    text-shadow: 0 0 6px black;
+}
+
+@keyframes floatup {
+    from {opacity: 1; transform: translateY(0) scale(1);}
+    to {opacity: 0; transform: translateY(-60px) scale(1.4);}
+}
+
+/* ===== Skill Tree ===== */
+#skillTree {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.skillNode{
+.skillNode {
     width: 90px;
     height: 90px;
     background: #7c5a2b;
     color: #f4e1b0;
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -261,18 +255,18 @@ button:active {
     cursor: pointer;
     font-size: 12px;
     text-align: center;
-    padding: 4px;
+    padding: 6px;
     border: 2px solid #3e2f22;
     transition: transform 0.1s ease, background 0.2s ease;
     position: relative;
 }
 
-.skillNode:hover{
+.skillNode:hover {
     transform: scale(1.05);
     background: #a17542;
 }
 
-.skillNode.disabled{
+.skillNode.disabled {
     background: #5c452f;
     cursor: not-allowed;
     color: #999;
