@@ -1,0 +1,7 @@
+# Word files
+words/*.txt
+
+# OS / Editor specific files
+.DS_Store
+Thumbs.db
+*.log
