@@ -9,7 +9,6 @@ function generateBarcode() {
     const value = input.value.trim();
 
     if (value === "") {
-        alert("Please enter a value");
         return;
     }
 

@@ -12,18 +12,10 @@ The goal is to demonstrate interactive browser-based games in a **portfolio-frie
 
 * **Wordle** (5 & 6 letter versions, random words optional)
 * **Reaction Test** (F1 styled reaction test)
+**Barcode Generator** (Generate a barcode of your chosen tekst!)
+**QR Code Generator** (Generate a QR of your chosen tekst (or link))
+**Morse Code Translator / Generator** (Translate a morse code string, or Generate on with your own message)
 * Mini-games demonstrating JavaScript logic and UI interaction
-* Interactive game settings
-
-### Features
-
-* Clickable active tiles and keyboard input for game interaction
-* Responsive and visually styled layouts
-* Flip animations for tiles (like Wordle)
-* Message popups for hints, errors, and game results
-* Settings popup for word length and random word toggle
-
----
 
 ## Technologies Used
 
@@ -47,9 +39,9 @@ The goal is to demonstrate interactive browser-based games in a **portfolio-frie
 
 ## Important Notes
 
-* **Credit Required:** If you use or adapt the code, a visible mention linking back to Jodahen.nl is required.
+* **Credit Required:** If you use or adapt the code, a visible mention linking back to Jodahen is required. (The mention should be easily findable and not hidden!)
 * **Assets Not Included:** Word lists, images, and other media are private and cannot be redistributed.
-* **Learning & Adaptation:** The source code is available for learning, testing, and personal use.
+* **Learning & Adaptation:** The source code is available for learning and testing. Feel free to  use any part of my code (for personal use), als long as i (**Jodahen**)get credited.
 
 ---
 
@@ -64,7 +56,7 @@ The goal is to demonstrate interactive browser-based games in a **portfolio-frie
 
 ## Copyright & Assets
 
-**© Jodahen.nl — All Rights Reserved**
+**© Jodahen — All Rights Reserved**
 
 * HTML, CSS, and JavaScript code may be freely viewed and studied.
 * Media assets, word lists, and other resources may **not be redistributed** without explicit permission.
@@ -74,4 +66,4 @@ The goal is to demonstrate interactive browser-based games in a **portfolio-frie
 ## Created By
 
 **Jodahen**
-A personal project to practice, demonstrate, and share interactive web games.
+A personal project to practice, demonstrate, and share interactive web games and more.
