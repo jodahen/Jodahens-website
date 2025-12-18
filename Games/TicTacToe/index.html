@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Jodahen</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../assets/images/Jodahen_logo.jpg" type="image/jpg">
+</head>
+<body>
+    <div class="modal active" id="setupModal">
+      <div class="modal-content">
+
+            <h2>Game Setup</h2>
+
+            <label>
+                Game Mode
+                <select id="gameMode">
+                    <option value="pvp">1 vs 1</option>
+                    <option value="cpu">1 vs Computer</option>
+                </select>
+            </label>
+
+            <label id="aiDifficultyWrapper" style="display: none;">
+                AI Difficulty
+                <select id="aiDifficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="impossible">Impossible</option>
+                </select>
+            </label>
+
+            <label>
+                Player 1 Name
+                <input type="text" id="player1Name" placeholder="Player X">
+            </label>
+
+            <label id="player2Wrapper">
+                Player 2 Name
+                <input type="text" id="player2Name" placeholder="Player O">
+            </label>
+
+            <label>
+                Rounds
+                <select id="roundCount">
+                    <option value="1">1</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
+
+
+            <button id="startGameBtn" type="button">Start Game</button>
+
+        </div>
+    </div>
+
+    <div class="game hidden" id="gameContainer">
+        <p id="status"> Player X`s turn</p>
+        <h2>Tic Tac Toe</h2>
+        <div id="scoreboard">
+            <span id="scorePlayerX">0</span>
+            <span class="score-sep">:</span>
+            <span id="scorePlayerO">0</span>
+        </div>
+
+        <div class="board" id="board">
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+        </div>
+
+        <button id="resetBtn">Reset</button>
+    </div>
+
+    <div id="confettiPopup">
+        <div class="popup-content">
+            <h2 id="winnerMessage">Game Over!</h2>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+
+
+    <script src="TTT.js"></script>
+</body>
+</html>
